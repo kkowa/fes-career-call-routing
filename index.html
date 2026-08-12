@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book your career call — Frontend Simplified</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #100f3d;
+        --purple: #5a4ff3;
+        --purple-dark: #4438d6;
+        --purple-light: #edebff;
+        --card: #f4f4fa;
+        --ink: #17162b;
+        --body: #3d3c52;
+        --muted: #8a88a0;
+        --white: #ffffff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          transition: none !important;
+        }
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        color: var(--body);
+        background: var(--white);
+        line-height: 1.6;
+      }
+
+      .hero {
+        background: var(--navy);
+        color: var(--white);
+        padding: 48px 24px 64px;
+      }
+      .hero-inner {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 19px;
+        margin-bottom: 32px;
+      }
+      .logo .mark {
+        color: #8f86ff;
+        font-weight: 700;
+      }
+      .logo b {
+        font-weight: 700;
+      }
+      .logo span {
+        font-weight: 400;
+        color: #c9c5f2;
+      }
+      .hero h1 {
+        font-size: clamp(28px, 5vw, 40px);
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      .hero .rule {
+        width: 96px;
+        height: 4px;
+        background: var(--purple);
+        margin: 22px 0;
+      }
+      .hero p {
+        color: #c9c5f2;
+        max-width: 540px;
+        font-size: 16.5px;
+      }
+
+      .calls {
+        max-width: 760px;
+        margin: -30px auto 0;
+        padding: 0 24px 24px;
+        display: grid;
+        gap: 16px;
+      }
+      .call {
+        display: block;
+        text-decoration: none;
+        background: var(--white);
+        border: 2px solid #e4e3f0;
+        border-radius: 12px;
+        overflow: hidden;
+        transition:
+          border-color 0.15s,
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+      .call:hover {
+        border-color: var(--purple);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(16, 15, 61, 0.1);
+      }
+      .call:focus-visible {
+        outline: 3px solid var(--purple);
+        outline-offset: 2px;
+      }
+      .call-head {
+        background: var(--purple);
+        color: var(--white);
+        padding: 12px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+      .call-head h2 {
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .pill {
+        background: var(--white);
+        color: var(--purple);
+        font-size: 12px;
+        font-weight: 700;
+        padding: 3px 12px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+      .call-body {
+        padding: 16px 20px;
+        background: var(--card);
+      }
+      .call-body p {
+        font-size: 14.5px;
+        color: var(--body);
+      }
+      .call-body .when {
+        margin-top: 8px;
+        font-size: 13.5px;
+        color: var(--ink);
+      }
+      .call-body .when b {
+        color: var(--purple);
+      }
+      .call-body .cta {
+        display: inline-block;
+        margin-top: 12px;
+        font-weight: 600;
+        font-size: 14.5px;
+        color: var(--purple);
+      }
+      .call:hover .cta {
+        text-decoration: underline;
+      }
+
+      .foot {
+        max-width: 760px;
+        margin: 24px auto 0;
+        padding: 0 24px 48px;
+      }
+      .foot .box {
+        background: var(--purple-light);
+        border-radius: 12px;
+        padding: 16px 20px;
+        font-size: 14px;
+        color: var(--ink);
+      }
+      .foot .box b {
+        color: var(--purple);
+      }
+      .foot .brand {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 32px;
+        padding-top: 16px;
+        border-top: 1px solid #e4e3f0;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .foot .brand .mark {
+        color: var(--purple);
+        font-weight: 700;
+      }
+      .foot .brand a {
+        color: var(--purple);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="logo">
+          <span class="mark">&lt;/&gt;</span>
+          <div><b>Frontend</b> <span>Simplified</span></div>
+        </div>
+        <h1>Book your career call</h1>
+        <div class="rule"></div>
+        <p>
+          Choose the call that matches what you need right now. Each one opens
+          the booking calendar in a new tab.
+        </p>
+      </div>
+    </header>
+
+    <main class="calls">
+      <a
+        class="call"
+        data-event="material"
+        href="#"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="call-head">
+          <h2>Material Call</h2>
+          <span class="pill">Call 1</span>
+        </div>
+        <div class="call-body">
+          <p>
+            Go through your reviewed profile, recommendations, and gap analysis
+            together with your Career Advisor.
+          </p>
+          <p class="when">
+            <b>Book this when:</b> you've received your review email —
+            recommended as your first call.
+          </p>
+          <span class="cta">Book Material Call &rarr;</span>
+        </div>
+      </a>
+
+      <a
+        class="call"
+        data-event="catchup"
+        href="#"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="call-head">
+          <h2>Catch-Up Call</h2>
+          <span class="pill">Call 2</span>
+        </div>
+        <div class="call-body">
+          <p>
+            Your general Career Advisor call: help with a specific application,
+            tools, CV / LinkedIn / GitHub check-ups, networking messages, or
+            motivation.
+          </p>
+          <p class="when">
+            <b>Book this when:</b> you need your advisor for anything during
+            your job search.
+          </p>
+          <span class="cta">Book Catch-Up Call &rarr;</span>
+        </div>
+      </a>
+
+      <a
+        class="call"
+        data-event="strategy"
+        href="#"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="call-head">
+          <h2>Strategy Clinic</h2>
+          <span class="pill">Call 3</span>
+        </div>
+        <div class="call-body">
+          <p>
+            A session with a Career Manager: low-traction diagnosis and
+            application strategy, or upskilling direction with material
+            recommendations — a more technical, industry-level chat.
+          </p>
+          <p class="when">
+            <b>Book this when:</b> applications aren't converting, or you want
+            direction on what to learn next.
+          </p>
+          <span class="cta">Book Strategy Clinic &rarr;</span>
+        </div>
+      </a>
+
+      <a
+        class="call"
+        data-event="interview"
+        href="#"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="call-head">
+          <h2>Interview Preparation</h2>
+          <span class="pill">Call 4</span>
+        </div>
+        <div class="call-body">
+          <p>
+            Mock interviews and targeted preparation: technical questions,
+            behavioral questions, and presenting your projects with confidence.
+          </p>
+          <p class="when">
+            <b>Book this when:</b> you have an interview scheduled or on the
+            horizon.
+          </p>
+          <span class="cta">Book Interview Preparation &rarr;</span>
+        </div>
+      </a>
+    </main>
+
+    <section class="foot">
+      <div class="box">
+        <b>Not sure which one?</b> Send us an email to careers@fesinstitute.com
+        — we'll reply as soon as possible and point you to the right call.
+      </div>
+      <div class="brand">
+        <span><span class="mark">&lt;/&gt;</span> Frontend Simplified</span>
+        <a href="https://frontendsimplified.com" target="_blank" rel="noopener"
+          >frontendsimplified.com</a
+        >
+      </div>
+    </section>
+
+    <script>
+      /* ============================================================
+     PASTE YOUR CALENDLY EVENT LINKS HERE — one per call
+     ============================================================ */
+      const CALENDLY_LINKS = {
+        material: "https://calendly.com/d/d3vw-992-2r4/car-materials-setup",
+        catchup: "https://calendly.com/d/dtkx-vcq-mhz/car-catch-up-call",
+        strategy: "https://calendly.com/d/dtn2-7kt-gbc/car-strategy-clinic",
+        interview:
+          "https://calendly.com/d/d2g7-3c7-rcf/car-interview-preparation",
+      };
+
+      document.querySelectorAll("[data-event]").forEach((a) => {
+        a.href = CALENDLY_LINKS[a.dataset.event];
+      });
+    </script>
+  </body>
+</html>
