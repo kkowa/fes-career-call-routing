@@ -339,7 +339,19 @@
       };
 
       document.querySelectorAll("[data-event]").forEach((a) => {
-        a.href = CALENDLY_LINKS[a.dataset.event];
+        const url = new URL(CALENDLY_LINKS[a.dataset.event]);
+
+        // Forward UTM params from the incoming URL (e.g. the email
+        // signature) so Calendly records where the booking came from
+        const incoming = new URLSearchParams(window.location.search);
+        for (const [key, value] of incoming) {
+          if (key.startsWith("utm_")) url.searchParams.set(key, value);
+        }
+
+        // Record which call type was picked
+        url.searchParams.set("utm_content", a.dataset.event);
+
+        a.href = url.toString();
       });
     </script>
   </body>
